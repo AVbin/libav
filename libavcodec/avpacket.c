@@ -57,6 +57,7 @@ void av_init_packet(AVPacket *pkt)
     pkt->buf                  = NULL;
     pkt->side_data            = NULL;
     pkt->side_data_elems      = 0;
+    av_assert0(pkt->size == 0 || pkt->data != NULL);
 }
 
 int av_new_packet(AVPacket *pkt, int size)
